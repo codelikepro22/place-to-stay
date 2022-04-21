@@ -9,11 +9,9 @@ import {
   Typography,
 } from '@mui/material';
 import { Lock, Menu } from '@mui/icons-material';
-import photoURL from '../profile.jpeg';
+
 import { useValue } from '../context/ContextProvider';
 import UserIcons from './user/UserIcons';
-
-const user = { name: 'test', photoURL };
 
 const NavBar = () => {
   const {
