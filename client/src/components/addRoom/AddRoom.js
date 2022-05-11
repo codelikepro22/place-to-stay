@@ -7,12 +7,16 @@ import {
   StepButton,
   Stepper,
 } from '@mui/material';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { useValue } from '../../context/ContextProvider';
 import AddDetails from './addDetails/AddDetails';
 import AddImages from './addImages/AddImages';
 import AddLocation from './addLocation/AddLocation';
 
 const AddRoom = () => {
+  const {
+    state: { images },
+  } = useValue();
   const [activeStep, setActiveStep] = useState(0);
   const [steps, setSteps] = useState([
     { label: 'Location', completed: false },
@@ -35,6 +39,20 @@ const AddRoom = () => {
   };
   const findUnfinished = () => {
     return steps.findIndex((step) => !step.completed);
+  };
+
+  useEffect(() => {
+    if (images.length) {
+      if (!steps[2].completed) setComplete(2, true);
+    } else {
+      if (steps[2].completed) setComplete(2, false);
+    }
+  }, [images]);
+  const setComplete = (index, status) => {
+    setSteps((steps) => {
+      steps[index].completed = status;
+      return [...steps];
+    });
   };
   return (
     <Container sx={{ my: 4 }}>
