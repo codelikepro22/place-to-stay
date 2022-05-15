@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="150px" height="150px" viewBox="0 0 150 150" enable-background="new 0 0 150 150" xml:space="preserve">
+<radialGradient id="SVGID_1_" cx="75" cy="52.2054" r="41.3439" gradientUnits="userSpaceOnUse">
+	<stop  offset="0" style="stop-color:#57CBF5"/>
+	<stop  offset="1" style="stop-color:#5CB9DC"/>
+</radialGradient>
+<path fill="url(#SVGID_1_)" d="M75.253,31.456c26.367,0,48.067,19.957,50.834,45.589c0.027-0.679,0.052-1.359,0.052-2.045
+	c0-28.243-22.896-51.139-51.139-51.139S23.861,46.757,23.861,75c0,1.876,0.108,3.726,0.305,5.55
+	C25.241,53.256,47.696,31.456,75.253,31.456z">
+	<animateTransform attributeName="transform"
+                    attributeType="XML"
+                    type="rotate"
+                    from="0 75 75"
+                    to="360 75 75"
+                    dur="1s"
+                    repeatCount="indefinite"/>
+</path>
+<radialGradient id="SVGID_2_" cx="80.4228" cy="15.0403" r="33.0751" gradientTransform="matrix(-1 0 0 -1 155.4228 110.0805)" gradientUnits="userSpaceOnUse">
+	<stop  offset="0" style="stop-color:#57CBF5"/>
+	<stop  offset="1" style="stop-color:#5CB9DC"/>
+</radialGradient>
+<path fill="url(#SVGID_2_)" d="M74.797,111.64c-21.094,0-38.454-15.966-40.667-36.471c-0.021,0.543-0.041,1.087-0.041,1.636
+	c0,22.595,18.317,40.911,40.911,40.911s40.911-18.317,40.911-40.911c0-1.501-0.086-2.981-0.244-4.44
+	C114.808,94.2,96.844,111.64,74.797,111.64z">
+	<animateTransform attributeName="transform"
+                    attributeType="XML"
+                    type="rotate"
+                    from="0 75 75"
+                    to="-360 75 75"
+                    dur="1s"
+                    repeatCount="indefinite"/>
+</path>
+<radialGradient id="SVGID_3_" cx="75" cy="75" r="20.2532" gradientUnits="userSpaceOnUse">
+	<stop  offset="0" style="stop-color:#57CBF5"/>
+	<stop  offset="1" style="stop-color:#5CB9DC"/>
+</radialGradient>
+<path fill="url(#SVGID_3_)" d="M75,54.747c-11.185,0-20.253,9.068-20.253,20.253c0,11.185,9.068,20.253,20.253,20.253
+	S95.253,86.185,95.253,75C95.253,63.814,86.185,54.747,75,54.747z M60.962,65.62c0,0,13.671-16.449,27.342-0.609
+	C88.304,65.011,76.152,53.131,60.962,65.62z">
+	<animateTransform attributeName="transform"
+                    attributeType="XML"
+                    type="rotate"
+                    from="0 75 75"
+                    to="360 75 75"
+                    dur="1s"
+                    repeatCount="indefinite"/>
+</path>
+</svg>
