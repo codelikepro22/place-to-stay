@@ -41,7 +41,7 @@ const InfoField = ({ mainProps, optionalProps = {}, minLength }) => {
       required
       InputProps={{
         endAdornment: (
-          <InputAdornment postion="end">
+          <InputAdornment position="end">
             {editing ? (
               <Avatar src={pendingIcon} sx={{ height: 70 }} />
             ) : (
