@@ -9,6 +9,7 @@ import { useEffect, useRef, useState } from 'react';
 import ClusterMap from './map/ClusterMap';
 import Rooms from './rooms/Rooms';
 import AddRoom from './addRoom/AddRoom';
+import Protected from './protected/Protected';
 
 const BottomNav = () => {
   const [value, setValue] = useState(0);
@@ -22,7 +23,11 @@ const BottomNav = () => {
         {
           0: <ClusterMap />,
           1: <Rooms />,
-          2: <AddRoom />,
+          2: (
+            <Protected>
+              <AddRoom setPage={setValue} />
+            </Protected>
+          ),
         }[value]
       }
       <Paper
