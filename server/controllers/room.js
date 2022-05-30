@@ -7,3 +7,8 @@ export const createRoom = tryCatch(async (req, res) => {
   await newRoom.save();
   res.status(201).json({ success: true, result: newRoom });
 });
+
+export const getRooms = tryCatch(async (req, res) => {
+  const rooms = await Room.find().sort({ _id: -1 });
+  res.status(200).json({ success: true, result: rooms });
+});
