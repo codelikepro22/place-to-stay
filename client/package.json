@@ -20,6 +20,7 @@
     "react-map-gl": "^7.0.12",
     "react-scripts": "5.0.1",
     "supercluster": "^7.1.5",
+    "swiper": "^8.2.2",
     "uuid": "^8.3.2",
     "web-vitals": "^2.1.4"
   },
