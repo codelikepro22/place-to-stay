@@ -150,12 +150,7 @@ const Room = () => {
               </Typography>
               <Typography component="span">{place?.text}</Typography>
             </Box>
-            <Box
-              sx={{
-                display: 'flex',
-                alignItems: 'center',
-              }}
-            >
+            <Box>
               <Typography variant="h6" component="span">
                 {'Address: '}
               </Typography>
