@@ -78,6 +78,9 @@ const reducer = (state, action) => {
     case 'UPDATE_ROOM':
       return { ...state, room: action.payload };
 
+    case 'UPDATE_USERS':
+      return { ...state, users: action.payload };
+
     default:
       throw new Error('No matched action!');
   }
