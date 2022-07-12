@@ -15,6 +15,8 @@ import { getRooms } from '../../../actions/room';
 import { getUsers } from '../../../actions/user';
 import { useValue } from '../../../context/ContextProvider';
 import moment from 'moment';
+import PieRoomsCost from './PieRoomsCost';
+import AreaRoomsUsers from './AreaRoomsUsers';
 
 const Main = ({ setSelectedLink, link }) => {
   const {
@@ -109,6 +111,12 @@ const Main = ({ setSelectedLink, link }) => {
             ))}
           </List>
         </Box>
+      </Paper>
+      <Paper elevation={3} sx={{ p: 2, gridColumn: '1/3' }}>
+        <PieRoomsCost />
+      </Paper>
+      <Paper elevation={3} sx={{ p: 2, gridColumn: '1/3' }}>
+        <AreaRoomsUsers />
       </Paper>
     </Box>
   );
