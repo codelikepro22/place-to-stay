@@ -21,6 +21,7 @@
     "react-map-gl": "^7.0.12",
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.1",
+    "recharts": "^2.1.12",
     "supercluster": "^7.1.5",
     "swiper": "^8.2.2",
     "uuid": "^8.3.2",
