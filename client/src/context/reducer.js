@@ -80,6 +80,11 @@ const reducer = (state, action) => {
 
     case 'UPDATE_USERS':
       return { ...state, users: action.payload };
+    case 'DELETE_ROOM':
+      return {
+        ...state,
+        rooms: state.rooms.filter((room) => room._id !== action.payload),
+      };
 
     default:
       throw new Error('No matched action!');
