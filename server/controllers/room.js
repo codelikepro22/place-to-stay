@@ -17,3 +17,12 @@ export const deleteRoom = tryCatch(async (req, res) => {
   const { _id } = await Room.findByIdAndDelete(req.params.roomId);
   res.status(200).json({ success: true, result: { _id } });
 });
+
+export const updateRoom = tryCatch(async (req, res) => {
+  const updatedRoom = await Room.findByIdAndUpdate(
+    req.params.roomId,
+    req.body,
+    { new: true }
+  );
+  res.status(200).json({ success: true, result: updatedRoom });
+});
