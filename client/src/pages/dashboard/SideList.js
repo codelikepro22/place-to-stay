@@ -24,6 +24,8 @@ import {
 import MuiDrawer from '@mui/material/Drawer';
 import { useMemo, useState } from 'react';
 import { Route, Routes, useNavigate } from 'react-router-dom';
+import { storeRoom } from '../../actions/room';
+import { logout } from '../../actions/user';
 import { useValue } from '../../context/ContextProvider';
 import Main from './main/Main';
 import Messages from './messages/Messages';
@@ -82,7 +84,15 @@ const Drawer = styled(MuiDrawer, {
 
 const SideList = ({ open, setOpen }) => {
   const {
-    state: { currentUser },
+    state: {
+      currentUser,
+      location,
+      details,
+      images,
+      updatedRoom,
+      deletedImages,
+      addedImages,
+    },
     dispatch,
   } = useValue();
 
@@ -127,7 +137,16 @@ const SideList = ({ open, setOpen }) => {
   const navigate = useNavigate();
 
   const handleLogout = () => {
-    dispatch({ type: 'UPDATE_USER', payload: null });
+    storeRoom(
+      location,
+      details,
+      images,
+      updatedRoom,
+      deletedImages,
+      addedImages,
+      currentUser.id
+    );
+    logout(dispatch);
     navigate('/');
   };
   return (

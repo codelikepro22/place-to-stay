@@ -109,3 +109,8 @@ export const updateStatus = (updatedFields, userId, dispatch) => {
     dispatch
   );
 };
+
+export const logout = (dispatch) => {
+  dispatch({ type: 'UPDATE_USER', payload: null });
+  dispatch({ type: 'RESET_ROOM' });
+};
