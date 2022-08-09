@@ -139,7 +139,7 @@ const SideList = ({ open, setOpen }) => {
         component: <Messages {...{ setSelectedLink, link: 'messages' }} />,
       },
     ],
-    []
+    [currentUser]
   );
 
   const navigate = useNavigate();
