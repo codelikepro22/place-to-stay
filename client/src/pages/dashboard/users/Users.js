@@ -9,7 +9,7 @@ import UsersActions from './UsersActions';
 
 const Users = ({ setSelectedLink, link }) => {
   const {
-    state: { users },
+    state: { users, currentUser },
     dispatch,
   } = useValue();
 
@@ -18,7 +18,7 @@ const Users = ({ setSelectedLink, link }) => {
 
   useEffect(() => {
     setSelectedLink(link);
-    if (users.length === 0) getUsers(dispatch);
+    if (users.length === 0) getUsers(dispatch, currentUser);
   }, []);
 
   const columns = useMemo(
@@ -39,14 +39,14 @@ const Users = ({ setSelectedLink, link }) => {
         width: 100,
         type: 'singleSelect',
         valueOptions: ['basic', 'editor', 'admin'],
-        editable: true,
+        editable: currentUser?.role === 'admin',
       },
       {
         field: 'active',
         headerName: 'Active',
         width: 100,
         type: 'boolean',
-        editable: true,
+        editable: currentUser?.role === 'admin',
       },
       {
         field: 'createdAt',

@@ -32,6 +32,8 @@ import Messages from './messages/Messages';
 import Requests from './requests/Requests';
 import Rooms from './rooms/Rooms';
 import Users from './users/Users';
+import useCheckToken from '../../hooks/useCheckToken';
+import isAdmin from './utils/isAdmin';
 
 const drawerWidth = 240;
 
@@ -83,6 +85,7 @@ const Drawer = styled(MuiDrawer, {
 }));
 
 const SideList = ({ open, setOpen }) => {
+  useCheckToken();
   const {
     state: {
       currentUser,
@@ -100,18 +103,23 @@ const SideList = ({ open, setOpen }) => {
 
   const list = useMemo(
     () => [
-      {
-        title: 'Main',
-        icon: <Dashboard />,
-        link: '',
-        component: <Main {...{ setSelectedLink, link: '' }} />,
-      },
-      {
-        title: 'Users',
-        icon: <PeopleAlt />,
-        link: 'users',
-        component: <Users {...{ setSelectedLink, link: 'users' }} />,
-      },
+      ...(isAdmin(currentUser)
+        ? [
+            {
+              title: 'Main',
+              icon: <Dashboard />,
+              link: '',
+              component: <Main {...{ setSelectedLink, link: '' }} />,
+            },
+            {
+              title: 'Users',
+              icon: <PeopleAlt />,
+              link: 'users',
+              component: <Users {...{ setSelectedLink, link: 'users' }} />,
+            },
+          ]
+        : []),
+
       {
         title: 'Rooms',
         icon: <KingBed />,
@@ -147,7 +155,6 @@ const SideList = ({ open, setOpen }) => {
       currentUser.id
     );
     logout(dispatch);
-    navigate('/');
   };
   return (
     <>
@@ -215,6 +222,16 @@ const SideList = ({ open, setOpen }) => {
           {list.map((item) => (
             <Route key={item.title} path={item.link} element={item.component} />
           ))}
+          <Route
+            path="*"
+            element={
+              isAdmin(currentUser) ? (
+                <Main {...{ setSelectedLink, link: '' }} />
+              ) : (
+                <Rooms {...{ setSelectedLink, link: 'rooms' }} />
+              )
+            }
+          />
         </Routes>
       </Box>
     </>
